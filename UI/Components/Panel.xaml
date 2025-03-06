@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="tramptap.UI.Components.Panel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tramptap.UI.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="854" d:DesignWidth="480"
+             Background="#000b1c">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="#333" BorderThickness="0 1 0 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Margin="0 15 0 10" VerticalAlignment="Center" Cursor="Hand">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" 
+                            Source="pack://application:,,,/Public/icons/store.png"
+                            MaxWidth="24" />
+
+                        <Label Content="Shop" Grid.Row="1"
+                            Foreground="#fff" Style="{StaticResource Font}" FontSize="18" />
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" Margin="0 15 0 10" VerticalAlignment="Center" Cursor="Hand">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" 
+                            Source="pack://application:,,,/Public/icons/layout-grid.png"
+                            MaxWidth="24" />
+                        <Label Content="Home" Grid.Row="1"
+                            Foreground="#fff" Style="{StaticResource Font}" FontSize="18" />
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="2" Margin="0 15 0 10" VerticalAlignment="Center" Cursor="Hand">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image Grid.Row="0" 
+                            Source="pack://application:,,,/Public/icons/calendar-check.png"
+                            MaxWidth="24" />
+                        <Label Content="Tasks" Grid.Row="1"
+                            Foreground="#fff" Style="{StaticResource Font}" FontSize="18" />
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

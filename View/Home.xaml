@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="tramptap.View.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tramptap.View"
+             xmlns:components="clr-namespace:tramptap.UI.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="854" d:DesignWidth="480"
+             Background="#000b1c">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <components:TopPanel Grid.Row="0" />
+
+        <Border Background="#b60000" Grid.Row="1" 
+            Width="400" Height="400" CornerRadius="1150" Cursor="Hand">
+            <Border Background="#ed0000" Grid.Row="1" 
+                Width="370" Height="370" CornerRadius="1150">
+                <Image Source="pack://application:,,,/Public/images/tramp_scin_2.png"
+                       Width="260"/>
+            </Border>
+        </Border>
+
+        <components:Panel Grid.Row="2" />
+    </Grid>
+</UserControl>
