@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:tramptap.UI.Components"
              mc:Ignorable="d" 
              d:DesignHeight="854" d:DesignWidth="480"
-             Background="#000b1c">
+             Background="#fff">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -16,28 +16,43 @@
 
         <Border Grid.Row="0">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-                <Border Grid.Column="0" Background="#222">
+                <Border Grid.Row="0" Background="#007cff" Margin="6" MaxHeight="70" CornerRadius="7" Padding="15 7" VerticalAlignment="Center" >
                     <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                        <StackPanel Orientation="Horizontal" Grid.Row="0">
-                            <Label Content="4" Style="{StaticResource Font}" Foreground="#fff" FontSize="25" />
-                            <Label Content="lvl" Style="{StaticResource Font}" Foreground="#999" FontSize="19" Margin="0 6 0 0" />
-                        </StackPanel>
-                        
-                        <StackPanel Orientation="Horizontal" Grid.Row="1">
-                            <Label Content="Еще собрать голосов" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Normal" FontSize="15" />
-                            <Label Content="19000" Style="{StaticResource Font}" Foreground="#999" FontSize="19" Margin="0 6 0 0" />
-                        </StackPanel>
+                        <Label Grid.Column="0" Content="Ваш уровень" Style="{StaticResource Font}" Foreground="#fff" FontSize="20" />
+
+                        <Border Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                CornerRadius="1000" BorderBrush="#004b9a" BorderThickness="3"
+                                Width="42" Height="42">
+                            <Label Content="4" Style="{StaticResource Font}" Foreground="#fff" FontSize="23" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Margin="0,-5,0,0" />
+                        </Border>
                     </Grid>
+
+                </Border>
+
+                <Border Grid.Row="1" Background="#007cff" Margin="6" MaxHeight="70" CornerRadius="7" Padding="15 9" VerticalAlignment="Center" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Content="Еще собрать голосов" Style="{StaticResource Font}" Foreground="#fff" FontSize="20" />
+
+                        <Border Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <Label Content="324 млн." Style="{StaticResource Font}" Foreground="#fff" FontSize="23" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Margin="0,-5,0,0" />
+                        </Border>
+                    </Grid>
+
                 </Border>
             </Grid>
         </Border>

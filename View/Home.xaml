@@ -7,24 +7,88 @@
              xmlns:components="clr-namespace:tramptap.UI.Components"
              mc:Ignorable="d" 
              d:DesignHeight="854" d:DesignWidth="480"
-             Background="#000b1c">
+             Background="#fff">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <components:TopPanel Grid.Row="0" />
 
-        <Border Background="#b60000" Grid.Row="1" 
-            Width="400" Height="400" CornerRadius="1150" Cursor="Hand">
-            <Border Background="#ed0000" Grid.Row="1" 
-                Width="370" Height="370" CornerRadius="1150">
-                <Image Source="pack://application:,,,/Public/images/tramp_scin_2.png"
-                       Width="260"/>
-            </Border>
-        </Border>
+        <StackPanel Grid.Row="1">
+            <Label Content="{Binding Counter}" Style="{StaticResource Font}" FontWeight="Medium" FontSize="40" HorizontalAlignment="Center" Margin="0 10 0 30" />
+
+            <Grid Width="420" Height="420" x:Name="ClickEffectGrid">
+                <!-- <Canvas x:Name="ClickEffectCanvas" Width="425" Height="425" Panel.ZIndex="10" /> -->
+
+                <Border Background="#b60000"
+                    x:Name="BtnHiddenClick" RenderTransformOrigin="0.5,0.5"
+                    Width="400" Height="400" CornerRadius="1150" Cursor="Hand">
+
+                    <Border.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Border.RenderTransform>
+
+                    <Border Background="#ed0000" Grid.Row="1"
+                            x:Name="BtnClickTap" RenderTransformOrigin="0.5,0.5"
+                            Width="370" Height="370" CornerRadius="1150"
+                            MouseDown="BtnClickTap_MouseDown">
+                        <Image Source="pack://application:,,,/Public/images/tramp_scin_2.png"
+                            Width="260"/>
+
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                             Storyboard.TargetProperty="Width"
+                                             To="420" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                             Storyboard.TargetProperty="Height"
+                                             To="420" Duration="0:0:0.1"/>
+
+                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                             Storyboard.TargetProperty="Width"
+                                             To="390" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                             Storyboard.TargetProperty="Height"
+                                             To="390" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="MouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                             Storyboard.TargetProperty="Width"
+                                             To="400" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                             Storyboard.TargetProperty="Height"
+                                             To="400" Duration="0:0:0.1"/>
+
+                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                             Storyboard.TargetProperty="Width"
+                                             To="370" Duration="0:0:0.1"/>
+                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                             Storyboard.TargetProperty="Height"
+                                             To="370" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                </Border>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="1000" Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
+                <Label Content="/" Foreground="#000" Style="{StaticResource Font}" FontSize="15" Margin="0 3 0 0" />
+                <Label Content="1900" Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
+            </StackPanel>
+        </StackPanel>
 
         <components:Panel Grid.Row="2" />
     </Grid>

@@ -6,14 +6,14 @@
              xmlns:local="clr-namespace:tramptap.UI.Components"
              mc:Ignorable="d" 
              d:DesignHeight="854" d:DesignWidth="480"
-             Background="#000b1c">
+             Background="#fff">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="#333" BorderThickness="0 1 0 0">
+        <Border Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="#ccc" BorderThickness="0 1 0 0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -30,10 +30,10 @@
 
                         <Image Grid.Row="0" 
                             Source="pack://application:,,,/Public/icons/store.png"
-                            MaxWidth="24" />
+                            MaxWidth="22" />
 
                         <Label Content="Shop" Grid.Row="1"
-                            Foreground="#fff" Style="{StaticResource Font}" FontSize="18" />
+                            Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
                     </Grid>
                 </Border>
 
@@ -46,9 +46,9 @@
 
                         <Image Grid.Row="0" 
                             Source="pack://application:,,,/Public/icons/layout-grid.png"
-                            MaxWidth="24" />
+                            MaxWidth="22" />
                         <Label Content="Home" Grid.Row="1"
-                            Foreground="#fff" Style="{StaticResource Font}" FontSize="18" />
+                            Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
                     </Grid>
                 </Border>
 
@@ -61,9 +61,9 @@
 
                         <Image Grid.Row="0" 
                             Source="pack://application:,,,/Public/icons/calendar-check.png"
-                            MaxWidth="24" />
+                            MaxWidth="22" />
                         <Label Content="Tasks" Grid.Row="1"
-                            Foreground="#fff" Style="{StaticResource Font}" FontSize="18" />
+                            Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
                     </Grid>
                 </Border>
             </Grid>

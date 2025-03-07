@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Internal\Interfaces\ClickInterface.cs" />
+    <Compile Include="Internal\Repository\ClickRepository.cs" />
     <Compile Include="UI\Components\Panel.xaml.cs">
       <DependentUpon>Panel.xaml</DependentUpon>
     </Compile>
@@ -129,7 +131,11 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Resource Include="Public\icons\calendar-check.png" />
+    <Resource Include="Public\icons\check.png" />
+    <Resource Include="Public\icons\chevron-left.png" />
+    <Resource Include="Public\icons\chevron-right.png" />
     <Resource Include="Public\icons\layout-grid.png" />
+    <Resource Include="Public\icons\plus.png" />
     <Resource Include="Public\icons\store.png" />
     <Resource Include="Public\images\tramp_scin_2.png" />
     <Resource Include="Public\images\tramp_scin_1.png" />
