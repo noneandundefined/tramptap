@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:tramptap"
         mc:Ignorable="d"
         Title="TRAMP TAP" Height="854" Width="480"
+        MaxWidth="1000" MinWidth="480"
         Background="#fff">
     <Grid>
         <Frame x:Name="FrameIndex" NavigationUIVisibility="Hidden" Source="pack://application:,,,/View/Home.xaml" />

@@ -25,8 +25,6 @@ namespace tramptap.View
     /// </summary>
     public partial class Home : UserControl, INotifyPropertyChanged
     {
-        private readonly ClickInterface _click;
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
@@ -34,12 +32,12 @@ namespace tramptap.View
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public int Counter
+        public long Counter
         {
-            get { return this._click.ReadClick(); }
+            get => ClickRepository.ReadClick();
             set
             {
-                this._click.WriteClick();
+                ClickRepository.WriteClick();
                 OnPropertyChanged(nameof(Counter));
             }
         }
@@ -51,7 +49,6 @@ namespace tramptap.View
             InitializeComponent();
 
             DataContext = this;
-            this._click = new ClickRepository();
         }
 
         private void BtnClickTap_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -63,7 +60,7 @@ namespace tramptap.View
             TextBlock floatingText = new TextBlock
             {
                 Text = "+ 1",
-                FontSize = 30,
+                FontSize = 40,
                 Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#004b9a")),
                 Style = (Style)Application.Current.Resources["Font"],
                 FontWeight = FontWeights.Bold

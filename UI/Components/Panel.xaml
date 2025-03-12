@@ -2,11 +2,17 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:tramptap.UI.Components"
+             xmlns:vm="clr-namespace:tramptap.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="854" d:DesignWidth="480"
              Background="#fff">
+
+    <UserControl.DataContext>
+        <vm:PanelVM />
+    </UserControl.DataContext>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -15,57 +21,52 @@
 
         <Border Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="#ccc" BorderThickness="0 1 0 0">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
+                <ItemsControl x:Name="panelItems" ItemsSource="{Binding PanelItems}" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="{Binding PanelItems.Count}" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
 
-                <Border Grid.Column="0" Margin="0 15 0 10" VerticalAlignment="Center" Cursor="Hand">
-                    <Grid HorizontalAlignment="Center">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5" VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Cursor="Hand" Background="#fff"
+                                    Padding="10 5" CornerRadius="6">
+                                <Border.InputBindings>
+                                    <MouseBinding Gesture="LeftClick"
+                                                  Command="{Binding ElementName=panelItems, Path=DataContext.PanelItemClickCommand}"
+                                                  CommandParameter="{Binding PathView}" />
+                                </Border.InputBindings>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                    <Image Source="{Binding Image}" MaxWidth="22" Margin="0 0 0 0" />
+                                    <Label Content="{Binding Title}" Foreground="#000" FontSize="18" Margin="0 0 0 0" Style="{StaticResource Font}" FontWeight="Normal" />
+                                </StackPanel>
 
-                        <Image Grid.Row="0" 
-                            Source="pack://application:,,,/Public/icons/store.png"
-                            MaxWidth="22" />
+                                <Border.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                                To="#eff0f2" Duration="0:0:0.1"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
 
-                        <Label Content="Shop" Grid.Row="1"
-                            Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
-                    </Grid>
-                </Border>
-
-                <Border Grid.Column="1" Margin="0 15 0 10" VerticalAlignment="Center" Cursor="Hand">
-                    <Grid HorizontalAlignment="Center">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-
-                        <Image Grid.Row="0" 
-                            Source="pack://application:,,,/Public/icons/layout-grid.png"
-                            MaxWidth="22" />
-                        <Label Content="Home" Grid.Row="1"
-                            Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
-                    </Grid>
-                </Border>
-
-                <Border Grid.Column="2" Margin="0 15 0 10" VerticalAlignment="Center" Cursor="Hand">
-                    <Grid HorizontalAlignment="Center">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-
-                        <Image Grid.Row="0" 
-                            Source="pack://application:,,,/Public/icons/calendar-check.png"
-                            MaxWidth="22" />
-                        <Label Content="Tasks" Grid.Row="1"
-                            Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
-                    </Grid>
-                </Border>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                                To="#fff" Duration="0:0:0.07"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Border.Triggers>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </Grid>
         </Border>
     </Grid>
