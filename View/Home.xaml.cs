@@ -27,7 +27,7 @@ namespace tramptap.View
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -39,27 +39,52 @@ namespace tramptap.View
             {
                 ClickRepository.WriteClick();
                 OnPropertyChanged(nameof(Counter));
+                OnPropertyChanged(nameof(CounterDisplay));
             }
         }
 
+        public long Energy
+        {
+            get => ClickRepository.ReadEnergyCount();
+            set
+            {
+                ClickRepository.WriteEnergyCount();
+                OnPropertyChanged(nameof(Energy));
+            }
+        }
 
+        public long Energy_Limit
+        {
+            get => ClickRepository.ReadEnergyCountLimit();
+            set
+            {
+                OnPropertyChanged();
+            }
+        }
+
+        public string CounterDisplay => $"{this.Counter} AUDI";
 
         public Home()
         {
             InitializeComponent();
-
             DataContext = this;
+        }
+
+        private void Initial()
+        {
+            
         }
 
         private void BtnClickTap_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Counter++;
+            Energy--;
 
             Point clickPosition = e.GetPosition(ClickEffectGrid);
 
             TextBlock floatingText = new TextBlock
             {
-                Text = "+ 1",
+                Text = $"+ {ClickRepository.ClickForTap()}",
                 FontSize = 40,
                 Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#004b9a")),
                 Style = (Style)Application.Current.Resources["Font"],

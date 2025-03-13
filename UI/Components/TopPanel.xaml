@@ -53,22 +53,6 @@
                         <Border Background="#000" Opacity="0.4" Height="9" VerticalAlignment="Bottom" CornerRadius="0,0,7,7" />
                     </Grid>
                 </Border>
-
-                <Border Grid.Row="1" Background="#007cff" Margin="6" MaxHeight="70" CornerRadius="7" Padding="15 9" VerticalAlignment="Center" >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-
-                        <Label Grid.Column="0" Content="Еще собрать голосов" Style="{StaticResource Font}" Foreground="#fff" FontSize="20" />
-
-                        <Border Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-                            <Label Content="324 млн." Style="{StaticResource Font}" Foreground="#fff" FontSize="23" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Margin="0,-5,0,0" />
-                        </Border>
-                    </Grid>
-
-                </Border>
             </Grid>
         </Border>
     </Grid>

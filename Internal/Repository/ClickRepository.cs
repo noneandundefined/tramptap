@@ -7,6 +7,7 @@ namespace tramptap.Internal.Repository
         private static long clicks = 0;
         private static short click_for_tap = 1;
         private static short energy_count = 1000;
+        private static short energy_count_limit = 1000;
 
         /// <summary>
         /// Получение сколько кликов за 1 тап
@@ -24,6 +25,11 @@ namespace tramptap.Internal.Repository
             return clicks;
         }
 
+        public static short ReadEnergyCountLimit()
+        {
+            return energy_count_limit;
+        }
+
         /// <summary>
         /// Чтения энергии пользователя
         /// </summary>
@@ -33,11 +39,20 @@ namespace tramptap.Internal.Repository
         }
 
         /// <summary>
+        /// Уменьшение энергии пользователя
+        /// </summary>
+        public static void WriteEnergyCount()
+        {
+            energy_count -= click_for_tap;
+        }
+
+        /// <summary>
         /// Увеличение кол-во кликов за 1 тап
         /// </summary>
-        public static void PayClick(short click)
+        public static void PayClick(short click, decimal price)
         {
-            click_for_tap += click;
+            click_for_tap = click;
+            clicks -= (long)price;
         }
 
         /// <summary>

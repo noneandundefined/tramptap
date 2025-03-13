@@ -38,6 +38,10 @@ namespace tramptap.Internal.Repository
             {
                 return ((short)(ClickRepository.ClickForTap() + 1), TapDictionary[(short)(ClickRepository.ClickForTap() + 1)]);
             }
+            else if (TapDictionary.ContainsKey((short)(ClickRepository.ClickForTap() + 10)))
+            {
+                return ((short)(ClickRepository.ClickForTap() + 10), TapDictionary[(short)(ClickRepository.ClickForTap() + 10)]);
+            }
 
             return null;
         }

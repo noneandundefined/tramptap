@@ -103,6 +103,7 @@
     <Compile Include="UI\Components\TopPanel.xaml.cs">
       <DependentUpon>TopPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Styles\Controller\IsPayShopConvertor.cs" />
     <Compile Include="UI\Styles\Controller\SelectedItemConvertor.cs" />
     <Compile Include="ViewModel\PanelVM.cs" />
     <Compile Include="View\Home.xaml.cs">

@@ -4,10 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:components="clr-namespace:tramptap.UI.Components"
+             xmlns:controllers="clr-namespace:tramptap.UI.Styles.Controller"
              xmlns:local="clr-namespace:tramptap.View"
              mc:Ignorable="d" 
              d:DesignHeight="854" d:DesignWidth="480"
              Background="#fff">
+
+    <UserControl.Resources>
+        <controllers:IsPayShopConvertor x:Key="IsPayShopConvertor" />
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -26,6 +32,7 @@
                     <Border VerticalAlignment="Center">
                         <Grid>
                             <Border Background="#007cff" CornerRadius="7" Padding="13" Cursor="Hand" Opacity="1" x:Name="btnPayEnergy">
+                                <!-- 007cff -->
                                 <Grid>
                                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 -4 0 0">
                                         <Label Content="Увеличение энергии" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Light" FontSize="13" Margin="0" HorizontalAlignment="Center" />
