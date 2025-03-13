@@ -18,7 +18,7 @@ CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 CHANGED_FILES=$(git diff --cached --name-only)
 
 if [ "$CURRENT_BRANCH" = "main" ] && echo "$CHANGED_FILES" | grep -qE '^(View|UI|Internal)/'; then
-    echo "Changes in 'View/ | UI/ | Internal/' directory detected."
+    echo -e "${BLUE}Changes in 'View/ | UI/ | Internal/' directory detected.${NC}"
 
     echo -e "${GREEN}[|] Running formatted and build for View/ | UI/ | Internal/...${NC}"
 
@@ -26,12 +26,12 @@ if [ "$CURRENT_BRANCH" = "main" ] && echo "$CHANGED_FILES" | grep -qE '^(View|UI
     git add .
     echo -e "${GREEN}[+] Success formatted and build for View/ | UI/ | Internal/!${NC}"
 elif echo "$CHANGED_FILES" | grep -qE '^(View|UI|Internal)/'; then
-    echo "Changes in 'View/ | UI/ | Internal/' directory detected. Only formatting will be done."
+    echo -e "${BLUE}Changes in 'View/ | UI/ | Internal/' directory detected. Only formatting will be done.${NC}"
 
     dotnet format tramptap.sln
 
     git add .
     echo -e "${GREEN}[+] Success formatted for client-mobile!${NC}"
 else
-    echo "No changes in 'View/ | UI/ | Internal/' directory. Skipping actions for View/ | UI/ | Internal/."
+    echo -e "${BLUE}No changes in 'View/ | UI/ | Internal/' directory. Skipping actions for View/ | UI/ | Internal/.${NC}"
 fi

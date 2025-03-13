@@ -31,62 +31,102 @@
                         <ScaleTransform ScaleX="1" ScaleY="1"/>
                     </Border.RenderTransform>
 
-                    <Border Background="#ed0000" Grid.Row="1"
-                            x:Name="BtnClickTap" RenderTransformOrigin="0.5,0.5"
-                            Width="370" Height="370" CornerRadius="1150"
-                            MouseDown="BtnClickTap_MouseDown">
-                        <Image Source="pack://application:,,,/Public/images/tramp_scin_2.png"
-                            Width="260"/>
+                    <Grid>
+                        <Canvas Width="420" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center">
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="120" Canvas.Top="30" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="60" Canvas.Top="70" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="220" Canvas.Top="30" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="300" Canvas.Top="80" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="160" Canvas.Top="70" />
 
-                        <Border.Triggers>
-                            <EventTrigger RoutedEvent="MouseDown">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
-                                             Storyboard.TargetProperty="Width"
-                                             To="420" Duration="0:0:0.1"/>
-                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
-                                             Storyboard.TargetProperty="Height"
-                                             To="420" Duration="0:0:0.1"/>
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="120" Canvas.Top="130" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="60" Canvas.Top="170" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="220" Canvas.Top="130" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="320" Canvas.Top="160" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="160" Canvas.Top="170" />
 
-                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
-                                             Storyboard.TargetProperty="Width"
-                                             To="390" Duration="0:0:0.1"/>
-                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
-                                             Storyboard.TargetProperty="Height"
-                                             To="390" Duration="0:0:0.1"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="60" Canvas.Top="250" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="220" Canvas.Top="230" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="300" Canvas.Top="230" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="160" Canvas.Top="260" />
 
-                            <EventTrigger RoutedEvent="MouseUp">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
-                                             Storyboard.TargetProperty="Width"
-                                             To="400" Duration="0:0:0.1"/>
-                                        <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
-                                             Storyboard.TargetProperty="Height"
-                                             To="400" Duration="0:0:0.1"/>
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="230" Canvas.Top="320" />
+                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                                    Fill="White" Canvas.Left="130" Canvas.Top="310" />
+                        </Canvas>
 
-                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
-                                             Storyboard.TargetProperty="Width"
-                                             To="370" Duration="0:0:0.1"/>
-                                        <DoubleAnimation Storyboard.TargetName="BtnClickTap"
-                                             Storyboard.TargetProperty="Height"
-                                             To="370" Duration="0:0:0.1"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Border.Triggers>
-                    </Border>
+                        <Border Background="#ed0000" Grid.Row="1"
+                                x:Name="BtnClickTap" RenderTransformOrigin="0.5,0.5"
+                                Width="370" Height="370" CornerRadius="1150" Opacity="0.8"
+                                MouseDown="BtnClickTap_MouseDown">
+                            <Image Source="pack://application:,,,/Public/images/tramp_scin_2.png"
+                                    Width="260"/>
+
+                            <Border.Triggers>
+                                <EventTrigger RoutedEvent="MouseDown">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                                     Storyboard.TargetProperty="Width"
+                                                     To="420" Duration="0:0:0.1"/>
+                                            <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                                     Storyboard.TargetProperty="Height"
+                                                     To="420" Duration="0:0:0.1"/>
+
+                                            <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                                     Storyboard.TargetProperty="Width"
+                                                     To="390" Duration="0:0:0.1"/>
+                                            <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                                     Storyboard.TargetProperty="Height"
+                                                     To="390" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="MouseUp">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                                     Storyboard.TargetProperty="Width"
+                                                     To="400" Duration="0:0:0.1"/>
+                                            <DoubleAnimation Storyboard.TargetName="BtnHiddenClick"
+                                                     Storyboard.TargetProperty="Height"
+                                                     To="400" Duration="0:0:0.1"/>
+
+                                            <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                                     Storyboard.TargetProperty="Width"
+                                                     To="370" Duration="0:0:0.1"/>
+                                            <DoubleAnimation Storyboard.TargetName="BtnClickTap"
+                                                     Storyboard.TargetProperty="Height"
+                                                     To="370" Duration="0:0:0.1"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Border.Triggers>
+                        </Border>
+                    </Grid>
                 </Border>
             </Grid>
 
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="1000" Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
-                <Label Content="/" Foreground="#000" Style="{StaticResource Font}" FontSize="15" Margin="0 3 0 0" />
-                <Label Content="1900" Foreground="#000" Style="{StaticResource Font}" FontSize="18" />
+                <Label Content="1000" Foreground="#000" Style="{StaticResource Font}" FontSize="18" Opacity="0.8" />
+                <Label Content="/" Foreground="#000" Style="{StaticResource Font}" FontSize="15" Margin="0 3 0 0" Opacity="0.8" />
+                <Label Content="1900" Foreground="#000" Style="{StaticResource Font}" FontSize="18" Opacity="0.8" />
             </StackPanel>
         </StackPanel>
 
