@@ -54,19 +54,31 @@ namespace tramptap.View
         public Shop()
         {
             InitializeComponent();
-
-            ShopInitial();
             DataContext = this;
+            ShopInitial();
         }
 
         private void ShopInitial()
         {
-            try
+            (short tap, decimal priceTap) = ShopRepository.GetPriceForTap().Value;
+            if (tap == 100)
             {
-                (short key, decimal value) = ShopRepository.GetPriceForTap().Value;
-                TapCountPay.Content = $"+{key} | -{value} AUDI";
+                TapCountPay.Content = $"МАКС.";
             }
-            catch (Exception ex) { }
+            else
+            {
+                TapCountPay.Content = $"+{tap} | -{priceTap} AUDI";
+            }
+
+            (short energy, decimal priceEnergy) = ShopRepository.GetPriceForEnergy().Value;
+            if (energy == 30000)
+            {
+                EnergyCountPay.Content = $"МАКС.";
+            }
+            else
+            {
+                EnergyCountPay.Content = $"+{energy} | -{priceEnergy} AUDI";
+            }
         }
 
         private void btnPayTap_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -82,7 +94,24 @@ namespace tramptap.View
 
                 ClickRepository.PayClick(tap, price);
                 ShopInitial();
-            } 
+            }
+            catch (Exception ex) { }
+        }
+
+        private void btnPayEnergy_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                (short energy, decimal price) = ShopRepository.GetPriceForEnergy().Value;
+
+                if (price > ClickRepository.ReadClick())
+                {
+                    return;
+                }
+
+                ClickRepository.PayEnergyLimit(energy, price);
+                ShopInitial();
+            }
             catch (Exception ex) { }
         }
     }

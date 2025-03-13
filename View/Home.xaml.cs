@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using tramptap.Internal.Interfaces;
 using tramptap.Internal.Repository;
 
@@ -25,6 +26,9 @@ namespace tramptap.View
     /// </summary>
     public partial class Home : UserControl, INotifyPropertyChanged
     {
+        private DispatcherTimer _timer;
+        private bool _isPaused = false;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName = "")
@@ -40,6 +44,7 @@ namespace tramptap.View
                 ClickRepository.WriteClick();
                 OnPropertyChanged(nameof(Counter));
                 OnPropertyChanged(nameof(CounterDisplay));
+                OnPropertyChanged(nameof(Energy));
             }
         }
 
@@ -48,7 +53,7 @@ namespace tramptap.View
             get => ClickRepository.ReadEnergyCount();
             set
             {
-                ClickRepository.WriteEnergyCount();
+                ClickRepository.WriteEnergy();
                 OnPropertyChanged(nameof(Energy));
             }
         }
@@ -67,18 +72,35 @@ namespace tramptap.View
         public Home()
         {
             InitializeComponent();
+
+            this._timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(300) };
+            this._timer.Tick += Timer_Tick;
+            this._timer.Start();
+
             DataContext = this;
         }
 
-        private void Initial()
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            
+            if (!this._isPaused && ClickRepository.ReadEnergyCount() < ClickRepository.ReadEnergyCountLimit())
+            {
+                Energy++;
+            }
+            else if (ClickRepository.ReadEnergyCount() >= ClickRepository.ReadEnergyCountLimit())
+            {
+                this._isPaused = true;
+            }
+            else if (this._isPaused && ClickRepository.ReadEnergyCount() < ClickRepository.ReadEnergyCountLimit())
+            {
+                this._isPaused = false;
+            }
         }
 
         private void BtnClickTap_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Counter++;
-            Energy--;
+
+            if (ClickRepository.ReadEnergyCount() - ClickRepository.ClickForTap() < 0) return;
 
             Point clickPosition = e.GetPosition(ClickEffectGrid);
 

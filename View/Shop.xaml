@@ -17,7 +17,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Border Padding="10">
@@ -31,12 +31,12 @@
                 <StackPanel>
                     <Border VerticalAlignment="Center">
                         <Grid>
-                            <Border Background="#007cff" CornerRadius="7" Padding="13" Cursor="Hand" Opacity="1" x:Name="btnPayEnergy">
+                            <Border Background="#007cff" CornerRadius="7" Padding="13" Cursor="Hand" Opacity="1" x:Name="btnPayEnergy" MouseLeftButtonDown="btnPayEnergy_MouseLeftButtonDown">
                                 <!-- 007cff -->
                                 <Grid>
                                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 -4 0 0">
                                         <Label Content="Увеличение энергии" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Light" FontSize="13" Margin="0" HorizontalAlignment="Center" />
-                                        <Label Content="+1000 | -100 AUDI" Style="{StaticResource Font}" Foreground="#fff" FontSize="38" FontWeight="Medium" Margin="0 -19 0 0" />
+                                        <Label Style="{StaticResource Font}" Foreground="#fff" FontSize="38" FontWeight="Medium" Margin="0 -19 0 0" x:Name="EnergyCountPay" />
                                     </StackPanel>
                                 </Grid>
 
@@ -91,13 +91,13 @@
                         </Grid>
                     </Border>
 
-                    <Border VerticalAlignment="Center" Margin="0 10">
+                    <Border VerticalAlignment="Center" Margin="0 10 0 0">
                         <Grid>
                             <Border Background="#007cff" CornerRadius="7" Padding="13" Cursor="Hand" Opacity="1" x:Name="btnPayTap" MouseLeftButtonDown="btnPayTap_MouseLeftButtonDown">
                                 <Grid>
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="78,-4,0,0">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                                         <Label Content="Увеличение тапа" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Light" FontSize="13" Margin="0" HorizontalAlignment="Center" />
-                                        <Label Content="+1000 | -100 AUDI" Style="{StaticResource Font}" Foreground="#fff" FontSize="38" FontWeight="Medium" Margin="0 -19 0 0" x:Name="TapCountPay" />
+                                        <Label Style="{StaticResource Font}" Foreground="#fff" FontSize="38" FontWeight="Medium" Margin="0 -19 0 0" x:Name="TapCountPay" />
                                     </StackPanel>
                                 </Grid>
 
@@ -139,6 +139,67 @@
                                                 <DoubleAnimation Storyboard.TargetName="btnPayEnergy"
                                                                 Storyboard.TargetProperty="RenderTransform.ScaleY"
                                                                 To="1.0" Duration="0:0:0.05"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Border.Triggers>
+
+                                <Border.RenderTransform>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </Border.RenderTransform>
+                            </Border>
+                            <Border Background="#000" Opacity="0.4" Height="9" VerticalAlignment="Bottom" CornerRadius="0,0,7,7" />
+                        </Grid>
+                    </Border>
+
+                    <Border VerticalAlignment="Center" Margin="0 10">
+                        <Grid>
+                            <Border Background="#007cff" CornerRadius="7" Padding="13" Cursor="Hand" Opacity="1" x:Name="btnPayPassiveUp">
+                                <Grid>
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                        <Label Content="Увеличение пассивного дохода" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Light" FontSize="13" Margin="0" HorizontalAlignment="Center" />
+                                        <Label Content="+10 | -10000 AUDI" Style="{StaticResource Font}" Foreground="#fff" FontSize="38" FontWeight="Medium" Margin="0 -19 0 0" x:Name="PassiveCountPay" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <Border.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#002794" Duration="0:0:0.08" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#007cff" Duration="0:0:0.03" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="MouseDown">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
+                                            Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                            To="1.03" Duration="0:0:0.2"/>
+                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
+                                             Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                             To="1.03" Duration="0:0:0.2"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+
+                                    <EventTrigger RoutedEvent="MouseUp">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
+                                             Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                             To="1.0" Duration="0:0:0.05"/>
+                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
+                                            Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                            To="1.0" Duration="0:0:0.05"/>
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger>
