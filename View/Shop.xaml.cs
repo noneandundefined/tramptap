@@ -32,8 +32,12 @@ namespace tramptap.View
         {
             (short key, decimal value) = ShopRepository.GetPriceForTap().Value;
 
-            TapCountPay.Content = $"+{key}";
-            PayMoneyForTap.Content = $"- {value}";
+            TapCountPay.Content = $"+{key} | -{value} AUDI";
+        }
+
+        private void btnPayTap_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

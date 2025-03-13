@@ -91,6 +91,12 @@
     <Compile Include="Internal\Repository\ShopRepository.cs" />
     <Compile Include="Internal\Services\UIActions.cs" />
     <Compile Include="Models\PanelItems.cs" />
+    <Compile Include="UI\Components\CustomButton.xaml.cs">
+      <DependentUpon>CustomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\CustomTopPanel.xaml.cs">
+      <DependentUpon>CustomTopPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Panel.xaml.cs">
       <DependentUpon>Panel.xaml</DependentUpon>
     </Compile>
@@ -117,6 +123,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\Components\CustomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Components\CustomTopPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Components\Panel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

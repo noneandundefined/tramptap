@@ -25,96 +25,7 @@
                     <Grid>
                         <Border Background="#007cff" CornerRadius="7" Padding="8" Cursor="Hand" Opacity="1">
                             <Grid>
-                                <Canvas Width="450" Height="80" VerticalAlignment="Top" HorizontalAlignment="Left" Opacity="0.2">
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="-5" Canvas.Top="-6">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="-1" Canvas.Top="22" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="-9" Canvas.Top="47">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="23" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="11" Canvas.Top="56" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="27" Canvas.Top="34" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="36" Canvas.Top="-16" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="50" Canvas.Top="17" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="44" Canvas.Top="56" HorizontalAlignment="Center" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="10" Canvas.Top="-20" HorizontalAlignment="Center" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="65" Canvas.Top="-7" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="64" Canvas.Top="40" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="78" Canvas.Top="15" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="89" Canvas.Top="-14" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="88" Canvas.Top="54" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="104" Canvas.Top="27" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                    <Polygon Points="12.5,2.5 15.25,10 23.75,10 16.75,15 19.5,22.5 12.5,17.5 5.5,22.5 8.25,15 1.25,10 9.75,10" Fill="White" Canvas.Left="114" HorizontalAlignment="Left" VerticalAlignment="Top">
-                                        <Polygon.RenderTransform>
-                                            <RotateTransform Angle="10" />
-                                        </Polygon.RenderTransform>
-                                    </Polygon>
-                                </Canvas>
+                                <local:CustomTopPanel />
 
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 -4 0 0">
                                     <Label Content="Ваша цель" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Light" FontSize="13" Margin="0" HorizontalAlignment="Center" />
@@ -126,14 +37,14 @@
                                 <EventTrigger RoutedEvent="MouseEnter">
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#940000" Duration="0:0:0.08" />
+                                            <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#002794" Duration="0:0:0.08" />
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>
                                 <EventTrigger RoutedEvent="MouseLeave">
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#FFFF2400" Duration="0:0:0.03" />
+                                            <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#007cff" Duration="0:0:0.03" />
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </EventTrigger>

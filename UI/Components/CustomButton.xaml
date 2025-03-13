@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="tramptap.UI.Components.CustomButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tramptap.UI.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="854" d:DesignWidth="480">
+    <Grid>
+        <Canvas Width="420" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="120" Canvas.Top="30" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="60" Canvas.Top="70" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="220" Canvas.Top="30" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="300" Canvas.Top="80" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="160" Canvas.Top="70" />
+
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="120" Canvas.Top="130" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="60" Canvas.Top="170" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="220" Canvas.Top="130" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="320" Canvas.Top="160" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="160" Canvas.Top="170" />
+
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="60" Canvas.Top="250" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="220" Canvas.Top="230" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="300" Canvas.Top="230" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="160" Canvas.Top="260" />
+
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="230" Canvas.Top="320" />
+            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
+                    Fill="White" Canvas.Left="130" Canvas.Top="310" />
+        </Canvas>
+    </Grid>
+</UserControl>

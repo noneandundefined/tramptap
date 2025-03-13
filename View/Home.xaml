@@ -18,11 +18,9 @@
         <components:TopPanel Grid.Row="0" />
 
         <StackPanel Grid.Row="1">
-            <Label Content="{Binding Counter}" Style="{StaticResource Font}" FontWeight="Medium" FontSize="40" HorizontalAlignment="Center" Margin="0 10 0 30" />
+            <Label Content="{Binding Counter}" Style="{StaticResource Font}" FontWeight="Medium" FontSize="40" HorizontalAlignment="Center" Margin="0 10 0 10" />
 
             <Grid Width="420" Height="420" x:Name="ClickEffectGrid">
-                <!-- <Canvas x:Name="ClickEffectCanvas" Width="425" Height="425" Panel.ZIndex="10" /> -->
-
                 <Border Background="#b60000"
                     x:Name="BtnHiddenClick" RenderTransformOrigin="0.5,0.5"
                     Width="400" Height="400" CornerRadius="1150" Cursor="Hand">
@@ -32,45 +30,9 @@
                     </Border.RenderTransform>
 
                     <Grid>
-                        <Canvas Width="420" Height="400" VerticalAlignment="Top" HorizontalAlignment="Center">
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="120" Canvas.Top="30" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="60" Canvas.Top="70" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="220" Canvas.Top="30" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="300" Canvas.Top="80" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="160" Canvas.Top="70" />
+                            <components:CustomButton />
 
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="120" Canvas.Top="130" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="60" Canvas.Top="170" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="220" Canvas.Top="130" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="320" Canvas.Top="160" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="160" Canvas.Top="170" />
-
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="60" Canvas.Top="250" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="220" Canvas.Top="230" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="300" Canvas.Top="230" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="160" Canvas.Top="260" />
-
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="230" Canvas.Top="320" />
-                            <Polygon Points="25,5 30.5,20 47.5,20 33.5,30 39,45 25,35 11,45 16.5,30 2.5,20 19.5,20"
-                                    Fill="White" Canvas.Left="130" Canvas.Top="310" />
-                        </Canvas>
-
-                        <Border Background="#ed0000" Grid.Row="1"
+                            <Border Background="#ed0000" Grid.Row="1"
                                 x:Name="BtnClickTap" RenderTransformOrigin="0.5,0.5"
                                 Width="370" Height="370" CornerRadius="1150" Opacity="0.8"
                                 MouseDown="BtnClickTap_MouseDown">
