@@ -31,7 +31,8 @@
                         <DataTemplate>
                             <Border Margin="5" VerticalAlignment="Center" 
                                     HorizontalAlignment="Center" 
-                                    Cursor="Hand" Background="#fff"
+                                    Cursor="Hand" 
+                                    Background="#fff"
                                     Padding="10 5" CornerRadius="6">
                                 <Border.InputBindings>
                                     <MouseBinding Gesture="LeftClick"

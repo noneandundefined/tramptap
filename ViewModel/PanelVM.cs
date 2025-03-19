@@ -15,6 +15,17 @@ namespace tramptap.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private string _activePanel;
+        public string ActivePanel
+        {
+            get => _activePanel;
+            set
+            {
+                _activePanel = value;
+                OnPropertyChanged(nameof(ActivePanel));
+            }
+        }
+
         /// <summary>
         /// Название компонентов в панеле
         /// </summary>
@@ -42,8 +53,13 @@ namespace tramptap.ViewModel
             {
                 new PanelItems {Image = "pack://application:,,,/Public/icons/store.png", PathView = "pack://application:,,,/View/Shop.xaml", Title = "Магазин"},
                 new PanelItems {Image = "pack://application:,,,/Public/icons/layout-grid.png", PathView = "pack://application:,,,/View/Home.xaml", Title = "Главная"},
-                new PanelItems {Image = "pack://application:,,,/Public/icons/calendar-check.png", PathView = "pack://application:,,,/View/Task.xaml", Title = "Выборы"},
+                new PanelItems {Image = "pack://application:,,,/Public/icons/calendar-check.png", PathView = "pack://application:,,,/View/Elections.xaml", Title = "Выборы"},
             };
+        }
+
+        public void SetActivePanel(string panelName)
+        {
+            ActivePanel = panelName;
         }
     }
 }

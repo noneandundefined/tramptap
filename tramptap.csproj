@@ -43,6 +43,7 @@
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Pipelines, Version=9.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.Pipelines.9.0.3\lib\net462\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -68,6 +69,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -95,6 +97,9 @@
     <Compile Include="UI\Components\CustomButton.xaml.cs">
       <DependentUpon>CustomButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\CustomElect.xaml.cs">
+      <DependentUpon>CustomElect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\CustomTopPanel.xaml.cs">
       <DependentUpon>CustomTopPanel.xaml</DependentUpon>
     </Compile>
@@ -104,9 +109,13 @@
     <Compile Include="UI\Components\TopPanel.xaml.cs">
       <DependentUpon>TopPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Styles\Controller\ActivePanelToBackgroundConverter.cs" />
     <Compile Include="UI\Styles\Controller\IsPayShopConvertor.cs" />
     <Compile Include="UI\Styles\Controller\SelectedItemConvertor.cs" />
     <Compile Include="ViewModel\PanelVM.cs" />
+    <Compile Include="View\Elections.xaml.cs">
+      <DependentUpon>Elections.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -129,6 +138,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Components\CustomElect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Components\CustomTopPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\Styles\Fonts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Elections.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +207,8 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="Public\images\kamlla_h.png" />
+    <Resource Include="Public\images\kamalla.png" />
     <Resource Include="Public\images\tramp_scin_3.png" />
     <Resource Include="Public\images\tramp_scin_4.png" />
     <Resource Include="Public\images\tramp_scin_5.png" />

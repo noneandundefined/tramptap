@@ -100,6 +100,24 @@ namespace tramptap.View
             AppTimer.Instance.StartEnergy();
 
             DataContext = this;
+
+            if (Counter >= 100)
+            {
+                _imageSource = "pack://application:,,,/Public/images/tramp_scin_4.png";
+                OnPropertyChanged(nameof(ImageSource));
+            }
+
+            if (Counter >= 500)
+            {
+                _imageSource = "pack://application:,,,/Public/images/tramp_scin_3.png";
+                OnPropertyChanged(nameof(ImageSource));
+            }
+
+            if (Counter >= 1000)
+            {
+                _imageSource = "pack://application:,,,/Public/images/tramp_scin_5.png";
+                OnPropertyChanged(nameof(ImageSource));
+            }
         }
 
         private void AppTimer_Tick(object sender, EventArgs e)

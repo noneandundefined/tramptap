@@ -160,7 +160,7 @@
                         <Grid>
                             <Border Background="{Binding CurrentBackground}" CornerRadius="7" Padding="13 13 18 13" Cursor="Hand" Opacity="1" MouseLeftButtonDown="btnPayPassive_MouseLeftButtonDown">
                                 <Grid>
-                                    <Image Source="{Binding CurrentImage}" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" MaxWidth="110" Margin="-17,-33,312,-14">
+                                    <Image Source="{Binding CurrentImage}" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" MaxWidth="100" Margin="-17,-33,312,-14">
                                         <Image.RenderTransform>
                                             <TransformGroup>
                                                 <ScaleTransform/>
@@ -172,7 +172,7 @@
                                     </Image>
 
                                     <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right">
-                                        <Label Content="Увеличение пассивного дохода" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Light" FontSize="13" Margin="0" HorizontalAlignment="Center" />
+                                        <Label Content="{Binding CurrentLabel}" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Normal" FontSize="14" Margin="0" HorizontalAlignment="Center" />
                                         <Label Content="+10 | -10000 AUDI" Style="{StaticResource Font}" Foreground="#fff" FontSize="38" FontWeight="Medium" Margin="0 -19 0 0" x:Name="PassiveCountPay" />
                                     </StackPanel>
                                 </Grid>

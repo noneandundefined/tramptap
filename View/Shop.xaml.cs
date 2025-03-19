@@ -30,6 +30,7 @@ namespace tramptap.View
         }
 
         private ImageSource _currentImage;
+        private string _currentLabel;
         private Brush _currentBackground;
 
         private readonly ImageSource[] _images = {
@@ -50,6 +51,16 @@ namespace tramptap.View
             new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4500ff")),
             new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00c1ff")),
             new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00d319")),
+        };
+
+        private string[] _labelTexts = {
+            "Доставщик",
+            "Курьер",
+            "Работник в маке",
+            "Программист",
+            "Создатель соц. сети",
+            "Работать в SpaceX",
+            "Купить мир"
         };
 
         public long Balance
@@ -81,6 +92,16 @@ namespace tramptap.View
             {
                 _currentImage = value;
                 OnPropertyChanged(nameof(CurrentImage));
+            }
+        }
+
+        public string CurrentLabel
+        {
+            get { return _currentLabel; }
+            set
+            {
+                _currentLabel = value;
+                OnPropertyChanged(nameof(CurrentLabel));
             }
         }
 
@@ -144,6 +165,16 @@ namespace tramptap.View
             {
                 CurrentImage = _images[6];
                 CurrentBackground = _backgrounds[6];
+            }
+
+            try
+            {
+                int key = ShopRepository.GetNextKeyPassive();
+                CurrentLabel = _labelTexts[key];
+            }
+            catch (Exception ex)
+            {
+                CurrentLabel = _labelTexts[6];
             }
         }
 

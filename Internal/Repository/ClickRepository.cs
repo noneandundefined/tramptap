@@ -4,7 +4,7 @@ namespace tramptap.Internal.Repository
 {
     public static class ClickRepository
     {
-        private static long clicks = 100000;
+        private static long clicks = 0;
         private static short click_for_tap = 1;
         private static short energy_count = 100;
         private static short energy_count_limit = 100;
@@ -109,9 +109,14 @@ namespace tramptap.Internal.Repository
             energy_count -= click_for_tap;
         }
 
-        public static void WriteClickPass(short click)
+        public static void WriteClickPass(long click)
         {
             clicks += click;
+        }
+
+        public static void ZeroClick()
+        {
+            clicks = 0;
         }
     }
 }
