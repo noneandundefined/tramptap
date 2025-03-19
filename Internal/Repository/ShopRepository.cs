@@ -55,7 +55,17 @@ namespace tramptap.Internal.Repository
             { 30000, 5000000m },
         };
 
-        //private static short energy_max = 1000;
+        private static Dictionary<short, decimal> PassiveDictionary { get; } = new Dictionary<short, decimal>()
+        {
+            { 0, 0m },
+            { 50, 1100m },
+            { 92, 22000m },
+            { 143, 33000m },
+            { 543, 44000m },
+            { 1743, 550000m },
+            { 4230, 660000m },
+            { 9820, 770000m },
+        };
 
         public static (short Key, decimal Value)? GetPriceForTap()
         {
@@ -85,7 +95,38 @@ namespace tramptap.Internal.Repository
             }
             else
             {
-                return (30000, TapDictionary[30000]);
+                return (30000, EnergyDictionary[30000]);
+            }
+        }
+
+        public static (short Key, decimal Value)? GetPriceForPassive()
+        {
+            var keys = PassiveDictionary.Keys.OrderBy(k => k).ToList();
+            int index = keys.IndexOf(ClickRepository.ReadPassive());
+
+            if (index != -1 && index < keys.Count - 1)
+            {
+                short nextKey = keys[index + 1];
+                return (nextKey, PassiveDictionary[nextKey]);
+            }
+            else
+            {
+                return (9820, PassiveDictionary[9820]);
+            }
+        }
+
+        public static int GetNextKeyPassive()
+        {
+            var keys = PassiveDictionary.Keys.OrderBy(k => k).ToList();
+            int index = keys.IndexOf(ClickRepository.ReadPassive());
+
+            if (index != -1 && index < keys.Count - 1)
+            {
+                return index;
+            }
+            else
+            {
+                return keys.Count - 1;
             }
         }
     }

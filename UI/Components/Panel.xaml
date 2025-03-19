@@ -6,8 +6,7 @@
              xmlns:local="clr-namespace:tramptap.UI.Components"
              xmlns:vm="clr-namespace:tramptap.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="854" d:DesignWidth="480"
-             Background="#fff">
+             d:DesignHeight="854" d:DesignWidth="480">
 
     <UserControl.DataContext>
         <vm:PanelVM />
@@ -19,7 +18,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="#ccc" BorderThickness="0 1 0 0">
+        <Border Grid.Row="1" VerticalAlignment="Bottom" BorderBrush="#ccc" BorderThickness="0 1 0 0" Background="#fff">
             <Grid>
                 <ItemsControl x:Name="panelItems" ItemsSource="{Binding PanelItems}" VerticalAlignment="Center" HorizontalAlignment="Stretch">
                     <ItemsControl.ItemsPanel>

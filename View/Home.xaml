@@ -6,9 +6,12 @@
              xmlns:local="clr-namespace:tramptap.View"
              xmlns:components="clr-namespace:tramptap.UI.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="854" d:DesignWidth="480"
-             Background="#fff">
+             d:DesignHeight="854" d:DesignWidth="480" Background="#fff">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Public/images/bg.jpg" Stretch="UniformToFill" Opacity="0.9" />
+        </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -36,8 +39,8 @@
                                 x:Name="BtnClickTap" RenderTransformOrigin="0.5,0.5"
                                 Width="370" Height="370" CornerRadius="1150" Opacity="0.8"
                                 MouseDown="BtnClickTap_MouseDown">
-                            <Image Source="pack://application:,,,/Public/images/tramp_scin_2.png"
-                                    Width="260"/>
+                            <Image Source="{Binding ImageSource}"
+                                    Width="260" Margin="55,0,55,29"/>
 
                             <Border.Triggers>
                                 <EventTrigger RoutedEvent="MouseDown">

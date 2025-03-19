@@ -26,8 +26,13 @@ namespace tramptap.View
     /// </summary>
     public partial class Home : UserControl, INotifyPropertyChanged
     {
-        private DispatcherTimer _timer;
         private bool _isPaused = false;
+        private string _imageSource = "pack://application:,,,/Public/images/tramp_scin_2.png";
+
+        public string ImageSource
+        {
+            get => _imageSource;
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -45,6 +50,24 @@ namespace tramptap.View
                 OnPropertyChanged(nameof(Counter));
                 OnPropertyChanged(nameof(CounterDisplay));
                 OnPropertyChanged(nameof(Energy));
+
+                if (Counter >= 100)
+                {
+                    _imageSource = "pack://application:,,,/Public/images/tramp_scin_4.png";
+                    OnPropertyChanged(nameof(ImageSource));
+                }
+
+                if (Counter >= 500)
+                {
+                    _imageSource = "pack://application:,,,/Public/images/tramp_scin_3.png";
+                    OnPropertyChanged(nameof(ImageSource));
+                }
+
+                if (Counter >= 1000)
+                {
+                    _imageSource = "pack://application:,,,/Public/images/tramp_scin_5.png";
+                    OnPropertyChanged(nameof(ImageSource));
+                }
             }
         }
 
@@ -73,15 +96,15 @@ namespace tramptap.View
         {
             InitializeComponent();
 
-            this._timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(300) };
-            this._timer.Tick += Timer_Tick;
-            this._timer.Start();
+            AppTimer.Instance.Tick += AppTimer_Tick;
+            AppTimer.Instance.StartEnergy();
 
             DataContext = this;
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
+        private void AppTimer_Tick(object sender, EventArgs e)
         {
+            // Логика обновления состояния
             if (!this._isPaused && ClickRepository.ReadEnergyCount() < ClickRepository.ReadEnergyCountLimit())
             {
                 Energy++;
@@ -94,6 +117,13 @@ namespace tramptap.View
             {
                 this._isPaused = false;
             }
+
+            if (ClickRepository.ReadPassive() > 0)
+            {
+                ClickRepository.WriteClickPass(ClickRepository.PassiveClick());
+                OnPropertyChanged(nameof(Counter));
+                OnPropertyChanged(nameof(CounterDisplay));
+            }
         }
 
         private void BtnClickTap_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -102,12 +132,18 @@ namespace tramptap.View
 
             if (ClickRepository.ReadEnergyCount() - ClickRepository.ClickForTap() < 0) return;
 
+            AppTimer.Instance.StopEnergy();
+            Task.Delay(1000).ContinueWith(t =>
+            {
+                AppTimer.Instance.StartEnergy();
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+
             Point clickPosition = e.GetPosition(ClickEffectGrid);
 
             TextBlock floatingText = new TextBlock
             {
                 Text = $"+ {ClickRepository.ClickForTap()}",
-                FontSize = 40,
+                FontSize = 50,
                 Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#004b9a")),
                 Style = (Style)Application.Current.Resources["Font"],
                 FontWeight = FontWeights.Bold
@@ -121,7 +157,7 @@ namespace tramptap.View
             ThicknessAnimation moveUp = new ThicknessAnimation
             {
                 From = floatingText.Margin,
-                To = new Thickness(floatingText.Margin.Left, floatingText.Margin.Top - 300, floatingText.Margin.Right, floatingText.Margin.Bottom),
+                To = new Thickness(floatingText.Margin.Left, floatingText.Margin.Top - 430, floatingText.Margin.Right, floatingText.Margin.Bottom),
                 Duration = TimeSpan.FromSeconds(3),
                 EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
             };
@@ -130,8 +166,8 @@ namespace tramptap.View
             {
                 From = 1,
                 To = 0,
-                Duration = TimeSpan.FromSeconds(0.5),
-                BeginTime = TimeSpan.FromSeconds(0.3)
+                Duration = TimeSpan.FromSeconds(0.65),
+                BeginTime = TimeSpan.FromSeconds(0.65)
             };
 
             Storyboard storyboard = new Storyboard();

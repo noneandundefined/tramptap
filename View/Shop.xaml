@@ -13,8 +13,12 @@
     <UserControl.Resources>
         <controllers:IsPayShopConvertor x:Key="IsPayShopConvertor" />
     </UserControl.Resources>
-    
+
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Public/images/bg.jpg" Stretch="UniformToFill" Opacity="0.9" />
+        </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="Auto" />
@@ -22,11 +26,9 @@
 
         <Border Padding="10">
             <StackPanel>
-                <Label Content="Скины" Style="{StaticResource Font}" FontSize="19" />
-
                 <StackPanel></StackPanel>
 
-                <Label Content="Улучшения" Style="{StaticResource Font}" FontSize="19" />
+                <Label Content="Улучшения" Style="{StaticResource Font}" FontSize="19" FontWeight="Medium" />
 
                 <StackPanel>
                     <Border VerticalAlignment="Center">
@@ -152,58 +154,28 @@
                         </Grid>
                     </Border>
 
-                    <Border VerticalAlignment="Center" Margin="0 10">
+                    <Label Content="Подработка" Style="{StaticResource Font}" FontWeight="Medium" FontSize="19" Margin="0 10 0 1" />
+
+                    <Border VerticalAlignment="Center" Margin="0 20 0 30">
                         <Grid>
-                            <Border Background="#007cff" CornerRadius="7" Padding="13" Cursor="Hand" Opacity="1" x:Name="btnPayPassiveUp">
+                            <Border Background="{Binding CurrentBackground}" CornerRadius="7" Padding="13 13 18 13" Cursor="Hand" Opacity="1" MouseLeftButtonDown="btnPayPassive_MouseLeftButtonDown">
                                 <Grid>
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                    <Image Source="{Binding CurrentImage}" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" MaxWidth="110" Margin="-17,-33,312,-14">
+                                        <Image.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform/>
+                                                <SkewTransform/>
+                                                <RotateTransform Angle="-15.691"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </Image.RenderTransform>
+                                    </Image>
+
+                                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right">
                                         <Label Content="Увеличение пассивного дохода" Style="{StaticResource Font}" Foreground="#fff" FontWeight="Light" FontSize="13" Margin="0" HorizontalAlignment="Center" />
                                         <Label Content="+10 | -10000 AUDI" Style="{StaticResource Font}" Foreground="#fff" FontSize="38" FontWeight="Medium" Margin="0 -19 0 0" x:Name="PassiveCountPay" />
                                     </StackPanel>
                                 </Grid>
-
-                                <Border.Triggers>
-                                    <EventTrigger RoutedEvent="MouseEnter">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#002794" Duration="0:0:0.08" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                    <EventTrigger RoutedEvent="MouseLeave">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <ColorAnimation Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="#007cff" Duration="0:0:0.03" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-
-                                    <EventTrigger RoutedEvent="MouseDown">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
-                                            Storyboard.TargetProperty="RenderTransform.ScaleX"
-                                            To="1.03" Duration="0:0:0.2"/>
-                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
-                                             Storyboard.TargetProperty="RenderTransform.ScaleY"
-                                             To="1.03" Duration="0:0:0.2"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-
-                                    <EventTrigger RoutedEvent="MouseUp">
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
-                                             Storyboard.TargetProperty="RenderTransform.ScaleX"
-                                             To="1.0" Duration="0:0:0.05"/>
-                                                <DoubleAnimation Storyboard.TargetName="btnPayPassiveUp"
-                                            Storyboard.TargetProperty="RenderTransform.ScaleY"
-                                            To="1.0" Duration="0:0:0.05"/>
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </EventTrigger>
-                                </Border.Triggers>
 
                                 <Border.RenderTransform>
                                     <ScaleTransform ScaleX="1" ScaleY="1" />

@@ -87,6 +87,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Internal\Interfaces\ClickInterface.cs" />
+    <Compile Include="Internal\Repository\AppTimer.cs" />
     <Compile Include="Internal\Repository\ClickRepository.cs" />
     <Compile Include="Internal\Repository\ShopRepository.cs" />
     <Compile Include="Internal\Services\UIActions.cs" />
@@ -189,6 +190,17 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Resource Include="Public\images\tramp_scin_3.png" />
+    <Resource Include="Public\images\tramp_scin_4.png" />
+    <Resource Include="Public\images\tramp_scin_5.png" />
+    <Resource Include="Public\images\bg.jpg" />
+    <Resource Include="Public\images\curier-passive.png" />
+    <Resource Include="Public\images\delivery-passive.png" />
+    <Resource Include="Public\images\mac-passive.png" />
+    <Resource Include="Public\images\prog-passive.png" />
+    <Resource Include="Public\images\social-passive.png" />
+    <Resource Include="Public\images\space-passive.png" />
+    <Resource Include="Public\images\world-passive.png" />
     <Resource Include="Public\icons\person-standing.png" />
     <Resource Include="Public\icons\chevrons-up.png" />
     <Resource Include="Public\images\speed.png" />

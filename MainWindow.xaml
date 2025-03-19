@@ -6,9 +6,12 @@
         xmlns:local="clr-namespace:tramptap"
         mc:Ignorable="d"
         Title="TRAMP TAP" Height="854" Width="480"
-        MaxWidth="1000" MinWidth="480"
-        Background="#fff">
+        MaxWidth="1000" MinWidth="480">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Public/images/bg.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        
         <Frame x:Name="FrameIndex" NavigationUIVisibility="Hidden" Source="pack://application:,,,/View/Home.xaml" />
     </Grid>
 </Window>
